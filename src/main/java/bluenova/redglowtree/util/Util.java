@@ -61,17 +61,17 @@ public class Util {
         front.addVertex(1, 1.0F, 1.0F, 0.0F);
         front.addVertex(0, 1.0F, 0.0F, 0.0F);
 
-        Quad back = new Quad(1, texture.getSubTexture(0));
+        /*Quad back = new Quad(1, texture.getSubTexture(0));
         back.addVertex(0, 0.0F, 0.0F, 1.0F);
         back.addVertex(1, 0.0F, 1.0F, 1.0F);
         back.addVertex(2, 1.0F, 1.0F, 0.0F);
-        back.addVertex(3, 1.0F, 0.0F, 0.0F);
+        back.addVertex(3, 1.0F, 0.0F, 0.0F);*/
 
-        Quad left = new Quad(2, texture.getSubTexture(0));
+        /*Quad left = new Quad(2, texture.getSubTexture(0));
         left.addVertex(3, 0.0F, 0.0F, 0.0F);
         left.addVertex(2, 0.0F, 1.0F, 0.0F);
         left.addVertex(1, 1.0F, 1.0F, 1.0F);
-        left.addVertex(0, 1.0F, 0.0F, 1.0F);
+        left.addVertex(0, 1.0F, 0.0F, 1.0F);*/
 
         Quad right = new Quad(3, texture.getSubTexture(0));
         right.addVertex(0, 0.0F, 0.0F, 0.0F);
@@ -79,7 +79,8 @@ public class Util {
         right.addVertex(2, 1.0F, 1.0F, 1.0F);
         right.addVertex(3, 1.0F, 0.0F, 1.0F);
 
-        bd.setQuad(front).setQuad(back).setQuad(left).setQuad(right);
+        //bd.setQuad(front).setQuad(back).setQuad(left).setQuad(right);
+        bd.setQuad(front).setQuad(right);
         return bd;
     }
 }

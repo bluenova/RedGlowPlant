@@ -38,8 +38,8 @@ public class RedGlowTree extends JavaPlugin {
         */
         
         SpoutShapedRecipe recipeRedstonePlant = new SpoutShapedRecipe(new SpoutItemStack(new RedstonePlant(plugin, "Redstone Plant"), 4));
-        recipeRedstonePlant.shape("   ", "WRW", "   ");
-        recipeRedstonePlant.setIngredient('W', MaterialData.wheat);
+        recipeRedstonePlant.shape("   ", "GRG", "   ");
+        recipeRedstonePlant.setIngredient('G', MaterialData.gravel);
         recipeRedstonePlant.setIngredient('R', MaterialData.redstone);
         SpoutManager.getMaterialManager().registerSpoutRecipe(recipeRedstonePlant);
         
