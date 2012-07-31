@@ -10,8 +10,6 @@ import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 import org.bukkit.Material;
-import org.bukkit.World;
-import org.bukkit.entity.LivingEntity;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 import org.getspout.spoutapi.block.SpoutBlock;
@@ -33,7 +31,7 @@ public class RedstonePlant1 extends GenericCustomBlock {
     private SpoutItemStack drop;
 
     public RedstonePlant1(Plugin plugin, String name) {
-        super(plugin, name, 20);
+        super(plugin, name + " State 2", 20);
         RedstonePlant1.name = name;
         RedstonePlant1.plugin = plugin;
         this.setItemDrop(new ItemStack(Material.REDSTONE, 1));

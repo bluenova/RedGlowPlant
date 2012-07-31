@@ -14,6 +14,8 @@ import org.bukkit.World;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
+import org.getspout.spoutapi.SpoutManager;
+import org.getspout.spoutapi.SpoutServer;
 import org.getspout.spoutapi.block.SpoutBlock;
 import org.getspout.spoutapi.block.design.GenericCubeBlockDesign;
 import org.getspout.spoutapi.inventory.SpoutItemStack;
@@ -35,7 +37,7 @@ public class RedstonePlant extends GenericCustomBlock {
     public RedstonePlant(Plugin plugin, String name) {
         super(plugin, name, 20);
         RedstonePlant.name = name;
-        this.plugin = plugin;
+        RedstonePlant.plugin = plugin;
         this.setItemDrop(new ItemStack(Material.REDSTONE, 1));
         this.setHardness(0.01F);
         this.setLightLevel(15);
@@ -83,6 +85,7 @@ public class RedstonePlant extends GenericCustomBlock {
                         blk.setCustomBlock(new RedstonePlant1(RedstonePlant.plugin, RedstonePlant.name));
                         RedstonePlant1.setupTimer(blk);
                         timer.cancel();
+                        System.out.println(blk.toString());
                     }
                 } else {
                     if (RedGlowTree.BlockTimer.containsKey(blk)) {

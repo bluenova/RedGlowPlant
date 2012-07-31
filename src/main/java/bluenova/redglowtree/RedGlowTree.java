@@ -47,6 +47,8 @@ public class RedGlowTree extends JavaPlugin {
         recipeRedstonePlant.setIngredient('R', MaterialData.redstone);
         SpoutManager.getMaterialManager().registerSpoutRecipe(recipeRedstonePlant);
         
+        RedGlowTree.pm.registerEvents(new bluenova.redglowtree.listener.RedGlowListener(),this);
+        
         Plugin spoutTest = this.getServer().getPluginManager().getPlugin("SpoutPlugin");        
     }
     

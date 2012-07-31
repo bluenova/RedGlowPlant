@@ -31,7 +31,7 @@ public class RedstonePlant4 extends GenericCustomBlock {
     private SpoutItemStack drop;
 
     public RedstonePlant4(Plugin plugin, String name) {
-        super(plugin, name, 20);
+        super(plugin, name + " State 5", 20);
         this.plugin = plugin;
         this.setItemDrop(new ItemStack(Material.REDSTONE, 1));
         this.setHardness(0.01F);
