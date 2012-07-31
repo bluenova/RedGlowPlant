@@ -24,45 +24,25 @@ import org.getspout.spoutapi.material.block.GenericCustomBlock;
  *
  * @author SvenBrnn
  */
-public class RedstonePlant extends GenericCustomBlock {
+public class RedstonePlant2 extends GenericCustomBlock {
 
     private int state = 0;
     private static String name;
-    private String texturState0 = "http://img513.imageshack.us/img513/6789/redstonecrystal0.png";
+    private String texturState2 = "http://img337.imageshack.us/img337/8669/redstonecrystal2.png";
+
     private static Plugin plugin;
     private SpoutItemStack drop;
 
-    public RedstonePlant(Plugin plugin, String name) {
+    public RedstonePlant2(Plugin plugin, String name) {
         super(plugin, name, 20);
-        RedstonePlant.name = name;
-        this.plugin = plugin;
+        RedstonePlant2.name = name;
+        RedstonePlant2.plugin = plugin;
         this.setItemDrop(new ItemStack(Material.REDSTONE, 1));
         this.setHardness(0.01F);
         this.setLightLevel(15);
-        GenericCubeBlockDesign des = Util.getdesignflower(plugin, texturState0, true);
+        GenericCubeBlockDesign des = Util.getdesignflower(plugin, texturState2, true);
         this.setBlockDesign(des);
         drop = new SpoutItemStack(MaterialData.redstone, 1);
-    }
-
-    @Override
-    public void onBlockPlace(World world, int x, int y, int z) {
-        SpoutBlock blk = (SpoutBlock) world.getBlockAt(x, y, z);
-        if (world.getBlockAt(x, y - 1, z).getType() == Material.STONE) {
-            super.onBlockPlace(world, x, y, z);
-            RedstonePlant.setupTimer(blk);
-        } else {
-            blk.breakNaturally();
-        }
-    }
-
-    @Override
-    public void onBlockPlace(World world, int x, int y, int z, LivingEntity living) {
-        SpoutBlock blk = (SpoutBlock) world.getBlockAt(x, y, z);
-        if (world.getBlockAt(x, y - 1, z).getType() == Material.STONE) {
-            super.onBlockPlace(world, x, y, z, living);
-        } else {
-            blk.breakNaturally();
-        }
     }
 
     @Override
@@ -80,19 +60,20 @@ public class RedstonePlant extends GenericCustomBlock {
                     Random rnd = new Random();
                     int next = rnd.nextInt(4);
                     if (next % 4 == 0) {
-                        blk.setCustomBlock(new RedstonePlant1(RedstonePlant.plugin, RedstonePlant.name));
-                        RedstonePlant1.setupTimer(blk);
-                        timer.cancel();
+                        blk.setCustomBlock(new RedstonePlant3(RedstonePlant2.plugin, RedstonePlant2.name));
+                        RedstonePlant3.setupTimer(blk);
+                     timer.cancel();
                     }
                 } else {
                     if (RedGlowTree.BlockTimer.containsKey(blk)) {
                         RedGlowTree.BlockTimer.remove(blk);
                         timer.cancel();
                     }
+                
                 }
             }
         };
         timer.scheduleAtFixedRate(timerTask, 30000, 30000);
         RedGlowTree.BlockTimer.put(blk, timer);
-    }
+    }  
 }

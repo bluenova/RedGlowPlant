@@ -4,11 +4,14 @@ package bluenova.redglowtree;
 import bluenova.redglowtree.blocks.RedstonePlant;
 import com.nijiko.permissions.PermissionHandler;
 import com.nijikokun.bukkit.Permissions.Permissions;
+import java.util.HashMap;
+import java.util.Timer;
 import org.bukkit.Server;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.getspout.spoutapi.SpoutManager;
+import org.getspout.spoutapi.block.SpoutBlock;
 import org.getspout.spoutapi.inventory.SpoutItemStack;
 import org.getspout.spoutapi.inventory.SpoutShapedRecipe;
 import org.getspout.spoutapi.material.MaterialData;
@@ -23,6 +26,7 @@ public class RedGlowTree extends JavaPlugin {
     public static PluginManager pm;
     public static Server server;
     public static PermissionHandler Permissions;
+    public static HashMap<SpoutBlock, Timer> BlockTimer = new HashMap<SpoutBlock, Timer>();
    
     @Override
     public void onEnable() { 
